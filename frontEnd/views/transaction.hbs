@@ -1,0 +1,70 @@
+{{!-- {{>header}}
+{{>navbar}}
+ <section class="container my-3">
+        {{#if isNotFound}}
+         <div class="alert alert-danger">
+                user not found
+            </div>
+        {{else}}  
+        <form method="get"> 
+        <h3>Add New Transaction</h2>
+            <div class=" mb-3">
+            <input class="form-control" name="transaction" placeholder="Enter your transaction">
+        </div> 
+        
+        <div class="from-check mb-3">
+             <input class="form-check-input" type="radio" name="add/withdraww"  value="add">
+                    <label class="form-check-label">add</label>
+        </div>
+          <div class="from-check mb-3">
+            <input class="form-check-input" type="radio" name="add/withdraww" value="withdraw">
+                    <label class="form-check-label">withdraw</label>
+        </div>
+        <div class="btn-3">
+                <button class="btn btn-primary" >submit</button>
+            </div>
+            {{/if}}
+        </form> --}}
+{{!-- //////// --}}
+{{>header}}
+{{>navbar}}
+      <form method="get">
+        <label for="add" class="my-2">Type of transaction:</label>
+        <div class="btn-3">
+          <input type="radio" name="add2" value="add1" />
+          <label for="add">Add</label>
+          <input type="radio" name="add2" id="withdraw" value="withdraw1" />
+          <label >Withdraw</label>
+        </div>
+        <div class="btn-3">
+          <label class="mt-4">Value</label>
+          <input
+            name="value" class=" form-control w-25"/>
+            
+          
+        </div>
+        <div class="btn-3">
+          <button class="btn btn-success my-3">Done</button>
+        </div>
+      </form>
+{{>footer}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </section>
+ {{>footer}}

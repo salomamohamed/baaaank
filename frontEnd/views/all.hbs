@@ -1,0 +1,55 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <div class="d-flex justify-content-end mb-3">
+        {{!-- <a href="/add" class="btn btn-primary mx-3">Add New User</a> --}}
+        <a href="/addPost" class="btn btn-primary mx-3">Add New User(Post)</a>
+         {{!-- <a href="/transaction" class="btn btn-primary mx-3">transaction </a> --}}
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>address</th>
+                    <th>phone</th>
+                    <th>accNum</th>
+                    <th>intialbalance</th>
+                    <th>actions</th>
+                    {{!-- <th>totalbalance</th> --}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#if isEmpty}}
+                <tr>
+                    <td colspan="3" class="bg-danger text-white ">No Users Yet</td>
+                </tr>
+                {{else}}
+                {{#each data}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.address}}</td>
+                     <td>{{this.phone}}</td>
+                      <td>{{this.accNum}}</td>
+                      <td>{{this.intialbalance}}</td>
+                      
+
+
+                    <td>
+                        <a class="btn btn-primary" href="/single/{{this.id}}">Show</a>
+                        <a class="btn btn-warning" href="/edit/{{this.id}}">Edit</a>
+                        <a class="btn btn-danger " href="/delete/{{this.id}}">Delete</a>
+                          <a class="btn btn-warning " href="/addtt/{{this.id}}">addtt</a>
+                           <a class="btn btn-warning " href="/withdraw/{{this.id}}">withdraw</a>
+                    </td>
+                </tr>
+                {{/each}}
+
+                {{/if}}
+            </tbody>
+        </table>
+    </div>
+</section>
+{{>footer}}
